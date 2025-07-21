@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Calculator</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+    <h1>Welcome {{ name }}</h1>
+    
+    <form action="/calculator" method="get">
+        <input type="text" name="a" placeholder="Enter number A" required>
+        <input type="text" name="b" placeholder="Enter number B" required>
+        <select name="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if result is not none %}
+        <h2>Result: {{ a }} {{ operation }} {{ b }} = {{ result }}</h2>
+    {% endif %}
+
+    
+</body>
+</html>

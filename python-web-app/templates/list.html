@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details & Recent Calculations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h2 { color: #333; }
+        table { border-collapse: collapse; width: 60%; margin-bottom: 30px; }
+        th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 8px; }
+    </style>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <h2>User Details</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user['name'] }}</td>
+            <td>{{ user['email'] }}</td>
+            <td>{{ user['age'] }}</td>
+            <td>{{ user['dob'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- <h2>Recent Calculations</h2>
+    <ul>
+        {% for calculation in calculations %}
+            <li>{{ calculation['a'] }} {{ calculation['operation'] }} {{ calculation['b'] }} = {{ calculation['result'] }}</li>
+        {% endfor %}
+    </ul> -->
+</body>
+</html>
+
